@@ -1,16 +1,7 @@
 import re
 def checkio(data):
-    #return len(data) >= 10 and re.search(r'([A-Z]+[a-z]+[0-9]+)', data) != None
-    if len(data) < 10:
-        return False
-    if re.search(r'[A-Z]+', data) == None:
-        return False
-    if re.search(r'[a-z]+', data) == None:
-        return False
-    if re.search(r'[0-9]+', data) == None:
-        return False
-
-    return True
+    src = ''.join(sorted(list(data)))
+    return len(data) >= 10 and re.search(r'([0-9]+[A-Z]+[a-z]+)', src) != None
 
 
 if __name__ == '__main__':
